@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Posts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:rgb(230, 223, 202);">
+
+<div class="container">
+  <h2>Posts</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create Post</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <form action="" method='POST' enctype="multipart/form-data">
+            {% csrf_token%}
+            <input type="file" name='image' id='image'><br>
+            <input type="text" name='captions' id='captions'><br>
+            <hr size="30">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<hr style="border-top: 1px solid rgb(3, 3, 3);">
+{% for i in posts %}
+<div class="card" style="width: 40rem;">
+  <img class="card-img-top" src="{{i.image.url}}" width=350px alt="Card image cap" style="border:5px solid black;">
+
+  <div class="card-body" width=4000px>
+    
+    <h2><strong class="card-" >{{i.user}}</strong></h2>
+    <p class="card-text" width=200px style="color:rgb(145, 33, 236);">{{i.caption}}</p>
+    <small>{{i.date.date}}</small>
+  </div>
+  <hr style="border-top: 1px solid rgb(3, 3, 3);">
+</div>
+{% endfor%}
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* Bordered form */
+form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid rgb(14, 9, 9);
+    box-sizing: border-box;
+  }
+  input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid rgb(14, 9, 9);
+    box-sizing: border-box;
+  }
+  input[type='submit']{
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    padding: 12px 20px;
+    margin: 20px 0;
+    border: 1px solid grey;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 10%;
+  }
+  .imgcontainer {
+    margin: 24px 0 12px 0;
+    height:50%;
+    width: 50%;
+    padding-left: 100px;
+  }
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }

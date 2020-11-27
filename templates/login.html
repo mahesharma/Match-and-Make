@@ -1,0 +1,91 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    html {
+        height: 100%;
+      }
+      
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: #200444;
+      }
+      
+      #main-holder {
+        width: 30%;
+        height: 70%;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 7px;
+        box-shadow: 0px 0px 5px 2px black;
+      }
+      
+     
+      #login-form {
+        align-self: flex-start;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+      }
+      
+      
+      .login-form-field::placeholder {
+        color: #3a3a3a;
+      }
+      
+      .login-form-field {
+        border: none;
+        border-bottom: 1px solid #ecd9d9;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        height:30px;
+        outline: none;
+        padding: 0px 0px 5px 5px;
+      }
+      
+      #login-form-submit {
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        background-color: #101542;
+        cursor: pointer;
+        outline: none;
+      }
+  </style>
+  <script>
+      
+  </script>
+</head>
+
+<body>
+  <main id="main-holder">
+    <div id="image">
+        <img src="{% static 'images/i1.png'%}" style="width:100px; height:678">
+      </div>
+    
+    <form action="login" id="login-form" method="POST">
+        {%csrf_token%}
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" required>
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" required>
+      <input type="submit" value="Login" id="login-form-submit">
+    </form>
+  
+  </main>
+</body>
+
+</html>
