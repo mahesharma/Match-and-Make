@@ -63,6 +63,7 @@ def editprofile(request):
 def logout_user(request):
     return logout_view(request)
 def linkprofile(request):
-    username=request.POST.get("search")
-    user=Post.objects.all()
+    username=request.GET.get("search")
+    us=User.objects.filter(username=username).first()
+    user=Post.objects.all().filter(user=us)
     return render(request,"mypost.html",{'posts':user})
